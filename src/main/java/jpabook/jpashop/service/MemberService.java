@@ -43,4 +43,12 @@ public class MemberService {
     public Member findOne(Long memberId) {
         return memberRepository.findOne(memberId);
     }
+
+    //트랜잭션 있는 상태에서 멤버 조회하면 영속상태임
+    @Transactional
+    public void update(Long id, String name) {
+        //영속상태 멤버 가져오기
+        Member member = memberRepository.findOne(id);
+        member.setName(name);
+    }
 }

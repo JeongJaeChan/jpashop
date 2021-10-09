@@ -10,10 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE) // 한테이블에 다 때려박음
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "dtype")
-@Getter
-@Setter
+@Getter @Setter
 public abstract class Item { //공통속성만 정의하고 나머진 상속할거라 추상클래스로 만듬
 
     @Id
