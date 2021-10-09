@@ -23,7 +23,7 @@ public class Order {
     @Column(name = "order_id")
     private Long id;
 
-    @ManyToOne(fetch = LAZY) // 여러개의 주문을 한명이 주문 가능
+    @ManyToOne(fetch = LAZY) // 여러개의 주문을 한명이 주문 가능, proxy bytebuddy?? 이걸로 가져옴
     @JoinColumn(name = "member_id") //외래키로 조인, 연관관계의 주인
     private Member member;
 
